@@ -14,7 +14,9 @@ Procedure:
  4. Create activation specification (if required) in server.xml
   
 ## server.xml: Resource adapter
-    <resourceAdapter autoStart="true" id="artemis" location="${shared.resource.dir}/artemis/websphere-artemis-rar-2.3.0.rar" />
+    <resourceAdapter autoStart="true" id="artemis" location="${shared.resource.dir}/artemis/websphere-artemis-rar-2.3.0.rar">
+        <properties.artemis connectionParameters="host=localhost;port=61616"/>
+    </resourceAdapter>
 	
 ## server.xml: Connection factory 
     <connectionFactory id="ArtemisCF" jndiName="jms/myCF">
