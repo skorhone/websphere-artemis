@@ -2,7 +2,7 @@
 This repository includes documentation and examples for integrating WebSphere Application Server Classic/Liberty with Apache ActiveMQ Artemis
 
 # Websphere Liberty configuration
-WebSphere Liberty integration is done using server.xml. 
+WebSphere Liberty configuration is done using server.xml.
 
 Procedure:
  1. Create a copy of .rar on your server
