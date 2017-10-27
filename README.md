@@ -1,10 +1,7 @@
 # websphere-artemis
-This project includes documentation and examples for integrating Apache ActiveMQ to WebSphere Application Server Classic/Liberty
+This repository includes documentation and examples for integrating WebSphere Application Server Classic/Liberty with Apache ActiveMQ Artemis
 
-# Notes
-Currently Artemis requires access to TransactionManager interface. Related code is located websphere-artemis-tx submodule. While accessing TransactionManager directly from ResourceAdapter is considered can be considered as a bad practice, the way that Artemis uses it is reasonably safe. ResourceAdapters in general should avoid use of TransactionManager and use TransactionSynchronizationRegistry provided in BootstrapContext.
-
-# Websphere Liberty
+# Websphere Liberty configuration
 WebSphere Liberty integration is done using server.xml. 
 
 Procedure:
