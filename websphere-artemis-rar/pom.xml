@@ -12,6 +12,13 @@
 	<name>ActiveMQ Artemis JMS RA for WebSphere Application Server</name>
 
 	<dependencies>
+		<!-- This dependency provides fix for Websphere class loading problem -->
+                <!-- class.getPackage() returns null during resource adapter initialization -->
+		<dependency>
+			<groupId>fi.kela.jboss.logging</groupId>
+			<artifactId>jboss-logging</artifactId>
+			<version>3.3.1</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>artemis-jms-client</artifactId>
@@ -27,10 +34,6 @@
 				</exclusion>
 				<exclusion>
 					<groupId>org.apache.geronimo.specs</groupId>
-					<artifactId>geronimo-jms_2.0_spec</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.apache.geronimo.specs</groupId>
 					<artifactId>geronimo-ejb_3.0_spec</artifactId>
 				</exclusion>
 			</exclusions>
@@ -39,11 +42,12 @@
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>artemis-ra</artifactId>
 			<version>${artemis.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>artemis-jms-server</artifactId>
-			<version>${artemis.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.jboss.logging</groupId>
+					<artifactId>jboss-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
@@ -53,6 +57,10 @@
 				<exclusion>
 					<groupId>org.apache.activemq</groupId>
 					<artifactId>artemis-core-client</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.jboss.logging</groupId>
+					<artifactId>jboss-logging</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
