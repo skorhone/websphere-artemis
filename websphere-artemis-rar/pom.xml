@@ -19,7 +19,8 @@
 			<artifactId>jboss-logging</artifactId>
 			<version>3.3.1-NPE</version>
 		</dependency>
-		<!--This dependency provides a fix for Admin console -->
+		<!-- This dependency provides a fix for Admin console -->
+                <!-- Right now there is no way to avoid this, if you want to use it -->
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
@@ -30,10 +31,7 @@
 			<artifactId>artemis-jms-client</artifactId>
 			<version>${artemis.version}</version>
 			<exclusions>
-				<exclusion>
-					<groupId>org.apache.activemq</groupId>
-					<artifactId>artemis-core-client</artifactId>
-				</exclusion>
+				<!-- These are provided by WebSphere -->
 				<exclusion>
 					<groupId>org.apache.activemq</groupId>
 					<artifactId>artemis-jms-client</artifactId>
@@ -48,27 +46,6 @@
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>artemis-ra</artifactId>
 			<version>${artemis.version}-NPE</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.jboss.logging</groupId>
-					<artifactId>jboss-logging</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>artemis-core-client</artifactId>
-			<version>${artemis.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.apache.activemq</groupId>
-					<artifactId>artemis-core-client</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.jboss.logging</groupId>
-					<artifactId>jboss-logging</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>fi.kela.artemis</groupId>
