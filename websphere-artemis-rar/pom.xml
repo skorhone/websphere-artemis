@@ -41,7 +41,7 @@
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>artemis-ra</artifactId>
-			<version>${artemis.version}</version>
+			<version>${artemis.version}-NPE</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.jboss.logging</groupId>
