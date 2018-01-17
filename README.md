@@ -4,20 +4,20 @@ This repository includes documentation and examples for integrating WebSphere Ap
 # WebSphere Application Server Classic Issues
 Websphere Application Server Classic has severe classloading issues. This chapter describes how these issues have been dealt with
 
-Issue: getPackage() returns null in classes loaded inside a resource adapter
-Fix: LoggerProvider in jboss-logging has been patched (1 line)
-Fix: ActiveMQRALogger in artemis-ra has been patched (1 line)
+*Issue: getPackage() returns null in classes loaded inside a resource adapter*
+ * Fix: LoggerProvider in jboss-logging has been patched (1 line)
+ * Fix: ActiveMQRALogger in artemis-ra has been patched (1 line)
 
-Issue: apache-commons inside resource adapter breaks admin console (Why!)
-Fix: PropertyUtils in apache-commons has been patched to include required methods
+*Issue: apache-commons inside resource adapter breaks admin console (Why!)*
+ * Fix: PropertyUtils in apache-commons has been patched to include required methods
 
 # Building artifact
 Dependencies have to be built before building the resource adapter
 
-Procedure
- 1. Clone and build patched jboss-logging from https://github.com/skorhone/jboss-logging master branch
+Procedure:
+ 1. Clone and build patched jboss-logging from https://github.com/skorhone/jboss-logging 3.3.1-NPE branch
  2. Clone and build patched artemis-ra from https://github.com/skorhone/activemq-artemis.git 2.4.0-NPE branch
- 3. Clone and build patched apache-commons
+ 3. Clone and build patched apache-commons from https://github.com/skorhone/commons-beanutils.git 1.9.3-IBM branch
  4. Clone and build this resource adapter
 
 # Configuring servers
@@ -32,7 +32,7 @@ Procedure:
  4. Create activation specification (if required) in server.xml
   
 ### server.xml: Resource adapter
-    <resourceAdapter autoStart="true" id="artemis" location="${shared.resource.dir}/artemis/websphere-artemis-rar-2.3.0.rar">
+    <resourceAdapter autoStart="true" id="artemis" location="${shared.resource.dir}/artemis/websphere-artemis-rar-2.4.0.1.rar">
         <properties.artemis connectionParameters="host=localhost;port=61616"/>
     </resourceAdapter>
 	
