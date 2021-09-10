@@ -1,7 +1,7 @@
 # websphere-artemis
 This repository includes documentation and examples for integrating WebSphere Application Server Classic/Liberty with Apache ActiveMQ Artemis
 
-*Warning*: A lot of time has passed since this project was created. Jboss logging and activemq-artemis have been patched in recent versions. While I have not tested, I would expect that websphere has replaced customized commons-beansutils version.
+*Warning*: A lot of time has passed since this project was created. Jboss logging and activemq-artemis have been patched in recent versions. While I have not tested, I would expect that commons-beansutils version has been replaced in WebSphere.
 
 # WebSphere Application Server Classic Issues
 Websphere Application Server Classic has severe classloading issues. This chapter describes how these issues have been dealt with
